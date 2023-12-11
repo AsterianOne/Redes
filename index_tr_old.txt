@@ -1,0 +1,38 @@
+      <?php
+      $cont = 1;
+      while($res=mysqli_fetch_array($all_Recordset1))
+      {
+        if($cont == 1)
+        {
+              echo "<tr style='text-align: center'>";
+        }
+        //selecione o setor
+          $localAtual = $res['local'];
+          $query_dados = "SELECT * FROM setores WHERE cod_setor = $localAtual";
+          $dados = mysqli_query($conn, $query_dados) or die(mysqli_error());
+          $row_setor = mysqli_fetch_assoc($dados);
+      ?>
+      
+        <td width="160" height="150" valign="center" align="center" style="display: inline-table;">
+          <a href="./cad_rack/pesq_rack.php?cod_rack=<?php echo $res['cod_rack']; ?>" onclick="NovaJanela(this.href,'album','414','924','yes');return false">
+            <b>Rack: <?php echo $res['nome'];?> - C:<?php echo $res['chave'];?></b<br>
+            <img src="./img/rack2.png" alt=""  width="130" height="350" border="" style="border:2px solid #ccc; padding:3px;border:3px solid #384d61; margin-left:2px; margin-top:2px; margin-right:4px; margin-bottom:2px;"/>
+            <br>
+              <?php echo $row_setor['sigla'];?>
+            <br> 
+            <br>           
+          </a>
+        </td>
+
+              
+      <?php
+        if($cont == $numeroColunas)
+        {
+              echo "</tr>";
+              $cont = 1;
+        } else
+        {
+              $cont++;
+        }
+      }
+      ?>

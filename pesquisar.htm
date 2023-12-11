@@ -1,0 +1,105 @@
+
+<script type="text/javascript" src="../pesquisar/jquery.js"></script>
+<script type="text/javascript" src="../pesquisar/jquery.watermarkinput.js"></script>
+<script type="text/javascript">
+$(document).ready(function(){
+
+$(".search").keyup(function() 
+{
+var searchbox = $(this).val();
+var dataString = 'searchword='+ searchbox;
+
+if(searchbox=='')
+{
+}
+else
+{
+
+$.ajax({
+type: "POST",
+url: "../pesquisar/search.php",
+data: dataString,
+cache: false,
+success: function(html)
+{
+
+$("#display").html(html).show();
+	
+	
+	}
+
+
+
+
+});
+}return false;    
+
+
+});
+});
+
+jQuery(function($){
+   $("#searchbox").Watermark("Pesquisar...");
+   });
+</script>
+<style type="text/css">
+body
+{
+margin:0px;
+margin-top:0px;
+}
+#searchbox
+{
+width:530px;
+border:solid 1px #BBBDC0;
+padding:3px;
+text-align:center;
+
+}
+#display
+{
+width:100%;
+display:none;
+float:left; margin-left:0px;
+border-left:solid 1px #dedede;
+border-right:solid 1px #dedede;
+border-bottom:solid 1px #dedede;
+overflow:hidden;
+}
+.display_box
+{
+padding:4px; border-top:solid 1px #dedede; font-size:12px; height:30px;
+}
+
+.display_box:hover
+{
+background:#4582C3;
+color:#FFFFFF;
+}
+#shade
+{
+background-color:#00CCFF;
+
+}
+</style>
+</head>
+
+<body>
+  <div style="float:left; margin-left:10px; margin-top:0px;" align="left" >
+  <table width="890">
+  	<tr>
+    	<td width="96%" height="29">
+   <input type="text" class="search" id="searchbox"  style="margin-top:0px; height:25px"/>
+   		</td>
+        <td width="4%" align="center" valign="center">
+  <img src="./img/pesq.png" st/></td>
+   </tr>
+   </table>
+   <br />
+<div id="display">
+</div>
+
+</div>
+
+</body>
+</html>
