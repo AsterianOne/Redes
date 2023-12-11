@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+  <link rel="stylesheet" type="text/css" href="../styles/estilo.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300&display=swap" rel="stylesheet">
+  <meta charset="utf-8">
+  <title>Form</title>
+
+</head>
+
+<body>
+  <div class="main">
+    <div class="cabecalho">
+      <img src="../img/logo.png">
+      <h1 class="funed_tittle">Sistema SARTS</h1>
+    </div>
+    <div class="menu">
+      <ul class="menu_ul">
+        <li><a href="/cadastro">Cadastro</a></li>
+        <ul>
+          <li><a href="/cadastro/user">User</a></li>
+          <li><a href="/cadastro/area">Area</a></li>
+          <li><a href="/cadastro/bloco">Bloco</a></li>
+          <li><a href="/cadastro/rack">Rack</a></li>
+            <ul>
+              <li><a href="/cadastro/rack/switch">Switch</a></li>
+              <li><a href="/cadastro/rack/path-painel">Path painel</a></li>
+              <li><a href="/cadastro/rack/voice-painel">Voice painel</a></li>
+            </ul>
+          <li><a href="cadastro/planta">Planta</a></li>
+        </ul>
+
+        <li><a href="/pesquisar">Pesquisar</a></li>
+        <li><a href="/mapa">Mapa</a></li>
+      </ul>
+    </div>
+    <div class="form_cad">
+      <h2 style="margin-bottom: 10px; ">Cadastrar Rack</h2>
+      <form method="POST" action="cad_rack2">
+        <div class="campo">
+          <label for="">Identificação:</label><input type="text" name="cod_rack" class="cod_rack" value=""><br>
+        </div>
+        <div class="campo">
+          <label for="">Nome:</label><input type="text" class="nome_rack" name="nome" value=""><br>
+        </div>
+        <div class="campo">
+          <label for="">Local:</label><input type="text" name="rack" class="rack" value=""><br>
+        </div>
+      </form>
+      <button class="submit">cadastrar</button>
+      <button class="cancelar">cancelar</button>
+    </div>
+    <div class="rodape">
+      <h3>Copyright © 2018 Fundação Ezequiel Dias.
+        Todos os direitos reservados.
+        Aspectos legais e responsabilidades
+        Política de privacidade.
+    </div>
+  </div>
+</body>
+
+</html>
